@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Seçilen zorluk: {{zorluk}}</ion-title>
+    <ion-item (click)="yeniOyun()" slot="end">Yeni Oyun</ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="harita">
+    <div class="satir" *ngFor="let satir of harita">
+      <!-- kare açıldıysa "acik" sınıfını ekle ve tıklandığına "kareyiAc" metodunu çağır -->
+      <div class="kare" *ngFor="let kare of satir" [ngClass]="{'acik': kare.acik}" (click)="kareyiAc(kare)">
+        <!-- kare açılmadıysa içeriği gösterme -->
+        <ng-container *ngIf="kare.acik">
+          <ng-container *ngIf="kare.mayin">
+            <ion-icon name="skull"></ion-icon>
+          </ng-container>
+          <ng-container *ngIf="!kare.mayin && (kare.komsuMayinSayisi > 0)">
+            {{kare.komsuMayinSayisi}}
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ion-content>

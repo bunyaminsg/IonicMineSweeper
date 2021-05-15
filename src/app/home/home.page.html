@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Zorluk</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <ion-grid>
+      <ion-row><ion-col>
+        <ion-button size="large" shape="round" expand="full" (click)="zorlukSec('kolay')">Kolay</ion-button>
+      </ion-col></ion-row>
+      <ion-row><ion-col>
+        <ion-button size="large" color="tertiary" shape="round" expand="full" (click)="zorlukSec('orta')">Orta</ion-button>
+      </ion-col></ion-row>
+      <ion-row><ion-col>
+        <ion-button size="large" color="danger" shape="round" expand="full" (click)="zorlukSec('zor')">Zor</ion-button>
+      </ion-col></ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+ (click)="zorlukSec('kolay')"
